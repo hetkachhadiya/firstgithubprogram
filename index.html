@@ -1,79 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Registration Form</title>
+    <title>PHP Form</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-body{
-    background:linear-gradient(135deg,#6a11cb,#2575fc);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-}
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-.form-box{
-    background:#fff;
-    width:350px;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
-}
+    <style>
+        body {
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            height: 100vh;
+        }
 
-h2{
-    text-align:center;
-    margin-bottom:20px;
-    color:#333;
-}
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
 
-input{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border:1px solid #ccc;
-    border-radius:8px;
-    font-size:15px;
-}
+        .btn-custom {
+            background-color: #4CAF50;
+            color: white;
+        }
 
-button{
-    width:100%;
-    padding:12px;
-    background:#2575fc;
-    color:#fff;
-    border:none;
-    border-radius:8px;
-    font-size:16px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#1b5fd8;
-}
-
-p{
-    text-align:center;
-    margin-top:15px;
-}
-
-a{
-    text-decoration:none;
-    color:#2575fc;
-}
-</style>
+        .btn-custom:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 
-<body>
+<body class="d-flex justify-content-center align-items-center">
 
-<div class="form-box">
-    <h2>Registration</h2>
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-6">
 
-    <input type="text"
+<div class="form-container animate_animated animate_fadeInDown">
+
+<h2 class="text-center mb-4">PHP Form</h2>
+
+<!-- IMPORTANT enctype already added -->
+<form method="post" action="insert.php" enctype="multipart/form-data">
+
+    <div class="mb-3">
+        <label>Name:</label>
+        <input type="text" name="name" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Password:</label>
+        <input type="password" name="password" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Age:</label>
+        <input type="number" name="age" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Date of Birth:</label>
+        <input type="date" name="dob" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Email:</label>
+        <input type="email" name="email" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female"> Female
+    </div>
+
+    <div class="mb-3">
+        <label>Hobby:</label><br>
+        <input type="checkbox" name="hobby[]" value="Reading"> Reading
+        <input type="checkbox" name="hobby[]" value="Cooking"> Cooking
+        <input type="checkbox" name="hobby[]" value="Music"> Music
+    </div>
+
+     <!-- 📸 IMAGE FIELD -->
+    <div class="mb-3">
+        <label>Upload Image:</label>
+        <input type="file" name="image" class="form-control" accept="image/*" onchange="previewImage(event)" required>
+
+        <!-- 🔥 IMAGE PREVIEW -->
+        <img id="preview">
+    </div>
+
+    <div class="text-center">
+        <input type="submit" value="Submit" class="btn btn-custom w-100">
+    </div>
+
+</form>
+
+<div class="text-center mt-3">
+    <a href="view.php" class="btn btn-primary">View Data</a>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<!-- 🔥 JavaScript for Preview -->
+<script>
+function previewImage(event) {
+    const reader = new FileReader();
+    reader.onload = function(){
+        const output = document.getElementById('preview');
+        output.src = reader.result;
+        output.style.display = "block";
+    }
+    reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+<style>
+#preview {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    display: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    object-fit: cover; /* important */
+}
+</style>
+
+
+</body>
+</html>
