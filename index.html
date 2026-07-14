@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Instagram Style Login</title>
+<title>Registration Form</title>
 
 <style>
 *{
@@ -14,116 +14,66 @@
 }
 
 body{
-    background:#fafafa;
+    background:linear-gradient(135deg,#6a11cb,#2575fc);
     display:flex;
     justify-content:center;
     align-items:center;
     height:100vh;
 }
 
-.container{
-    width:350px;
+.form-box{
     background:#fff;
-    border:1px solid #dbdbdb;
-    padding:40px;
-    text-align:center;
-    border-radius:10px;
+    width:350px;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
-.logo{
-    font-size:40px;
-    font-family:cursive;
-    margin-bottom:30px;
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#333;
 }
 
 input{
     width:100%;
     padding:12px;
-    margin:8px 0;
+    margin:10px 0;
     border:1px solid #ccc;
-    border-radius:6px;
-    outline:none;
+    border-radius:8px;
     font-size:15px;
 }
 
 button{
     width:100%;
     padding:12px;
-    background:#0095f6;
-    color:white;
+    background:#2575fc;
+    color:#fff;
     border:none;
-    border-radius:6px;
+    border-radius:8px;
     font-size:16px;
     cursor:pointer;
 }
 
 button:hover{
-    background:#0077cc;
+    background:#1b5fd8;
 }
 
-.or{
-    margin:20px 0;
-    color:#888;
-    font-weight:bold;
-}
-
-.facebook{
-    color:#1877f2;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.forgot{
-    display:block;
+p{
+    text-align:center;
     margin-top:15px;
-    color:#00376b;
-    text-decoration:none;
-    font-size:14px;
 }
 
-.signup{
-    margin-top:25px;
-    border:1px solid #dbdbdb;
-    padding:20px;
-    border-radius:10px;
-}
-
-.signup a{
-    color:#0095f6;
+a{
     text-decoration:none;
-    font-weight:bold;
+    color:#2575fc;
 }
 </style>
 </head>
 
 <body>
 
-<div>
+<div class="form-box">
+    <h2>Registration</h2>
 
-<div class="container">
-
-<div class="logo">Instagram</div>
-
-<input type="text" placeholder="Phone number, username or email">
-
-<input type="password" placeholder="Password">
-
-<button>Log In</button>
-
-<div class="or">OR</div>
-
-<a href="#" class="facebook">Log in with Facebook</a>
-
-<a href="#" class="forgot">Forgot password?</a>
-
-</div>
-
-<div class="signup">
-Don't have an account?
-<a href="#">Sign up</a>
-</div>
-
-</div>
-
-</body>
-</html>
+    <input type="text"
