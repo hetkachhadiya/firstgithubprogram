@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-<?php
 
-$conn = mysqli_connect("localhost","root","","mydatabase");
-
-if(!$conn){
-    die("Connection Failed: ".mysqli_connect_error());
-}
-
-=======
 <?php
 
 $conn = mysqli_connect("localhost","root","","studentdb");
@@ -42,5 +33,4 @@ if(mysqli_query($conn,$sql)){
 
 mysqli_close($conn);
 
->>>>>>> 40988b13d1c42bca089be27324ecb37364cef7b3
 ?>
