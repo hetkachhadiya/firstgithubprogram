@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
+
     <title>Registration Form</title>
 
     <!-- Bootstrap CSS -->
@@ -39,6 +39,9 @@
 </head>
 
 <body class="d-flex justify-content-center align-items-center">
+    <?php
+        include 'db.php';
+    ?>
 
 <div class="container">
 <div class="row justify-content-center">
@@ -49,7 +52,7 @@
 <h2 class="text-center mb-4">PHP Form</h2>
 
 <!-- IMPORTANT enctype already added -->
-<form method="post" action="insert.php" enctype="multipart/form-data">
+<form method="post" action="db.php" enctype="multipart/form-data">
 
     <div class="mb-3">
         <label>Name:</label>
@@ -137,31 +140,12 @@ function previewImage(event) {
 </style>
 
 
-=======
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     
-    <title>Document</title>
-</head>
-<body>
-    <?php
-        include 'db.php';
-    ?>
-    <h1>Hello, World!</h1>
->>>>>>> nawaz
+
 </body>
 </html>
 
 
 
-<<<<<<< HEAD
-=======
-button,
-a,
-input[type="submit"],
-.btn {
-    
-    cursor: pointer;
-    
-}
->>>>>>> Sahil
